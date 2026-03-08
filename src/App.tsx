@@ -1,10 +1,10 @@
 import "./App.css";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
     <>
-      {" "}
-      <div className="text-2xl text-red-950">hello</div>
+      <AppRoutes />
     </>
   );
 }
