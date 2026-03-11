@@ -1,3 +1,4 @@
+import Dashboard from "@/pages/dashboard";
 import LoginPage from "@/pages/login/Login";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
@@ -6,6 +7,11 @@ export default function AppRoutes() {
     {
       path: "/",
       element: <LoginPage />,
+    },
+
+    {
+      path: "/dashboard",
+      element: <Dashboard />,
     },
   ]);
 

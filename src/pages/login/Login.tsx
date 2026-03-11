@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { AxiosError } from "axios";
 import {
   DoorOpenIcon,
   MailIcon,
@@ -8,10 +9,36 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
+import { useMutation } from "@tanstack/react-query";
+import authApis from "@/apis/auth.apis";
+import { useNavigate } from "react-router";
+import { toast } from "sonner";
+import type { ApiError } from "@/types/api.type";
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const loginMutation = useMutation({
+    mutationFn: authApis.login,
+    onSuccess: () => {
+      toast.success("Đăng nhập thành công");
+      navigate("/dashboard");
+    },
+    onError: (error: AxiosError<ApiError>) => {
+      console.error("Login failed:", error);
+      toast.error(error?.response?.data?.message || "Đăng nhập thất bại");
+    },
+  });
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    loginMutation.mutate({
+      email,
+      password,
+    });
+  };
   return (
     <div className="flex min-h-screen">
       {/* LEFT */}
@@ -72,9 +99,9 @@ export default function LoginPage() {
           </div>
 
           {/* FORM */}
-          <form className="space-y-5">
+          <form className="space-y-5" onSubmit={handleSubmit}>
             {/* Email */}
-            <div className="space-y-2">
+            <div className="space-y-2 text-left">
               <label className="text-sm font-medium text-slate-700">
                 Email
               </label>
@@ -86,12 +113,14 @@ export default function LoginPage() {
                   type="email"
                   placeholder="admin@doorshowroom.vn"
                   className="h-12 pl-10 focus-visible:ring-amber-500"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
 
             {/* Password */}
-            <div className="space-y-2">
+            <div className="space-y-2 text-left">
               <label className="text-sm font-medium text-slate-700">
                 Mật khẩu
               </label>
@@ -103,6 +132,8 @@ export default function LoginPage() {
                   type={showPassword ? "text" : "password"}
                   placeholder="Nhập mật khẩu"
                   className="h-12 pl-10 pr-12 focus-visible:ring-amber-500"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
 
                 <button
@@ -141,9 +172,10 @@ export default function LoginPage() {
             {/* Button */}
             <Button
               type="submit"
+              disabled={loginMutation.isPending}
               className="w-full h-12 text-base bg-amber-500 hover:bg-amber-600"
             >
-              Đăng nhập
+              {loginMutation.isPending ? "Đang đăng nhập..." : "Đăng nhập"}
             </Button>
           </form>
 
