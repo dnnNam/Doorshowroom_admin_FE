@@ -1,3 +1,3 @@
-const path = { dashboard: "/dashboard" };
+const path = { dashboard: "/dashboard", login: "/" };
 
 export default path;

@@ -37,7 +37,7 @@ class Http {
             break;
 
           default:
-            toast.error("Có lỗi xảy ra");
+            console.log("có lỗi xảy ra ", error);
         }
 
         return Promise.reject(error);

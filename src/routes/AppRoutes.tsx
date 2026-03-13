@@ -2,21 +2,24 @@ import Mainlayout from "@/layouts/mainlayouts";
 import Dashboard from "@/pages/dashboard";
 import LoginPage from "@/pages/login/Login";
 import { createBrowserRouter, RouterProvider } from "react-router";
+import RejectedRoute from "./PrivateRoutes/RejectedRoute";
+import ProtectedRoute from "./PrivateRoutes/ProtectedRoute";
 
 export default function AppRoutes() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <LoginPage />,
+      element: <RejectedRoute />,
+      children: [{ index: true, element: <LoginPage /> }],
     },
 
     {
       path: "/dashboard",
-      element: <Mainlayout />,
+      element: <ProtectedRoute />,
       children: [
         {
-          index: true,
-          element: <Dashboard />,
+          element: <Mainlayout />,
+          children: [{ index: true, element: <Dashboard /> }],
         },
       ],
     },
