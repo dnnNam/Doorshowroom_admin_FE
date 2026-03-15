@@ -63,7 +63,7 @@ const navItems: NavItem[] = [
     icon: MessageSquareIcon,
     path: path.chatbot,
   },
-  { id: "accounts", label: "Tài khoản", icon: ShieldIcon },
+  { id: "accounts", label: "Tài khoản", icon: ShieldIcon, path: path.accounts },
 ];
 export default function Asidebar() {
   const location = useLocation();
