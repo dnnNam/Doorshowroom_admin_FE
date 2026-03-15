@@ -21,7 +21,8 @@ export type PageType =
   | "customers"
   | "images"
   | "chatbot"
-  | "accounts";
+  | "accounts"
+  | "video";
 
 interface NavItem {
   id: PageType;
@@ -63,6 +64,7 @@ const navItems: NavItem[] = [
     path: path.chatbot,
   },
   { id: "accounts", label: "Tài khoản", icon: ShieldIcon, path: path.accounts },
+  { id: "video", label: "Video dự án", icon: ImageIcon, path: path.videos }, // Tính năng sắp ra mắt
 ];
 export default function Asidebar() {
   const location = useLocation();
