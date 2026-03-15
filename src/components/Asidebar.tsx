@@ -4,7 +4,6 @@ import {
   LayoutDashboardIcon,
   DoorOpenIcon,
   FolderIcon,
-  ShoppingCartIcon,
   UsersIcon,
   ImageIcon,
   MessageSquareIcon,
@@ -42,6 +41,7 @@ const navItems: NavItem[] = [
     id: "products",
     label: "Sản phẩm",
     icon: DoorOpenIcon,
+    path: path.products,
   },
   {
     id: "categories",
@@ -49,7 +49,7 @@ const navItems: NavItem[] = [
     icon: FolderIcon,
     path: path.categories,
   },
-  { id: "orders", label: "Đơn hàng", icon: ShoppingCartIcon },
+
   { id: "customers", label: "Khách hàng", icon: UsersIcon },
   { id: "images", label: "Hình ảnh", icon: ImageIcon },
   {
