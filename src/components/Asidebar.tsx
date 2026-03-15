@@ -51,7 +51,12 @@ const navItems: NavItem[] = [
   { id: "orders", label: "Đơn hàng", icon: ShoppingCartIcon },
   { id: "customers", label: "Khách hàng", icon: UsersIcon },
   { id: "images", label: "Hình ảnh", icon: ImageIcon },
-  { id: "chatbot", label: "Chatbot", icon: MessageSquareIcon },
+  {
+    id: "chatbot",
+    label: "Chatbot",
+    icon: MessageSquareIcon,
+    path: path.chatbot,
+  },
   { id: "accounts", label: "Tài khoản", icon: ShieldIcon },
 ];
 export default function Asidebar() {
