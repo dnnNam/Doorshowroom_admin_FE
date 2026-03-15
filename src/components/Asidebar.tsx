@@ -18,7 +18,6 @@ export type PageType =
   | "dashboard"
   | "products"
   | "categories"
-  | "orders"
   | "customers"
   | "images"
   | "chatbot"
@@ -56,7 +55,7 @@ const navItems: NavItem[] = [
     icon: UsersIcon,
     path: path.customers,
   },
-  { id: "images", label: "Hình ảnh", icon: ImageIcon },
+  { id: "images", label: "Hình ảnh", icon: ImageIcon, path: path.images },
   {
     id: "chatbot",
     label: "Chatbot",

@@ -6,6 +6,7 @@ const path = {
   products: "products",
   customers: "customers",
   accounts: "accounts",
+  images: "images",
 };
 
 export default path;

@@ -10,6 +10,7 @@ import { CategoriesPage } from "@/pages/categories/Categories";
 import { ProductsPage } from "@/pages/product/Product";
 import CustomersPage from "@/pages/customer";
 import AccountsPage from "@/pages/account";
+import ImagesPage from "@/pages/imagesPage";
 
 export default function AppRoutes() {
   const router = createBrowserRouter([
@@ -32,6 +33,7 @@ export default function AppRoutes() {
             { path: path.products, element: <ProductsPage /> },
             { path: path.customers, element: <CustomersPage /> },
             { path: path.accounts, element: <AccountsPage /> },
+            { path: path.images, element: <ImagesPage /> },
           ],
         },
       ],
