@@ -3,6 +3,7 @@ const path = {
   login: "/",
   chatbot: "chatbot",
   categories: "categories",
+  products: "products",
 };
 
 export default path;
