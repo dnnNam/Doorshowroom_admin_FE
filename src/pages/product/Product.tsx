@@ -88,7 +88,7 @@ const mockProducts: Product[] = [
     status: "Sắp hết",
   },
 ];
-export function ProductsPage() {
+export default function ProductsPage() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "Còn hàng":
