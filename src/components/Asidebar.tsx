@@ -47,6 +47,7 @@ const navItems: NavItem[] = [
     id: "categories",
     label: "Danh mục",
     icon: FolderIcon,
+    path: path.categories,
   },
   { id: "orders", label: "Đơn hàng", icon: ShoppingCartIcon },
   { id: "customers", label: "Khách hàng", icon: UsersIcon },

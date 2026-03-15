@@ -6,6 +6,7 @@ import RejectedRoute from "./PrivateRoutes/RejectedRoute";
 import ProtectedRoute from "./PrivateRoutes/ProtectedRoute";
 import ChatbotManager from "@/pages/chatbot";
 import path from "@/constants/path";
+import { CategoriesPage } from "@/pages/categories/Categories";
 
 export default function AppRoutes() {
   const router = createBrowserRouter([
@@ -24,6 +25,7 @@ export default function AppRoutes() {
           children: [
             { index: true, element: <Dashboard /> },
             { path: path.chatbot, element: <ChatbotManager /> },
+            { path: path.categories, element: <CategoriesPage /> },
           ],
         },
       ],
