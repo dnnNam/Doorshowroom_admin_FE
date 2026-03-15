@@ -9,6 +9,7 @@ import path from "@/constants/path";
 import { CategoriesPage } from "@/pages/categories/Categories";
 import { ProductsPage } from "@/pages/product/Product";
 import CustomersPage from "@/pages/customer";
+import AccountsPage from "@/pages/account";
 
 export default function AppRoutes() {
   const router = createBrowserRouter([
@@ -30,6 +31,7 @@ export default function AppRoutes() {
             { path: path.categories, element: <CategoriesPage /> },
             { path: path.products, element: <ProductsPage /> },
             { path: path.customers, element: <CustomersPage /> },
+            { path: path.accounts, element: <AccountsPage /> },
           ],
         },
       ],
