@@ -50,7 +50,12 @@ const navItems: NavItem[] = [
     path: path.categories,
   },
 
-  { id: "customers", label: "Khách hàng", icon: UsersIcon },
+  {
+    id: "customers",
+    label: "Khách hàng",
+    icon: UsersIcon,
+    path: path.customers,
+  },
   { id: "images", label: "Hình ảnh", icon: ImageIcon },
   {
     id: "chatbot",
