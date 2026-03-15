@@ -1,3 +1,8 @@
-const path = { dashboard: "/dashboard", login: "/", chatbot: "chatbot" };
+const path = {
+  dashboard: "/dashboard",
+  login: "/",
+  chatbot: "chatbot",
+  categories: "categories",
+};
 
 export default path;
